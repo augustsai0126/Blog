@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title','|Honepage')
+@section('title','| Honepage')
 
 @section('content')
         <div class="row">
