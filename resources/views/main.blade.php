@@ -1,4 +1,4 @@
-@include('_head')
+@include('partials._head')
   <body>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
