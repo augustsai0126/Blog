@@ -43,3 +43,9 @@
             </div>
         </div>
 @endsection
+
+@section('scripts')
+    <script>
+        confirm('Welcome My Blog');
+    </script>
+@endsection
