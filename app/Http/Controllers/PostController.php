@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Post;
+
 class PostController extends Controller
 {
     /**
@@ -36,7 +38,22 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate the date
+        $this->validate($request, array(
+                'title' => 'required|max:255',//設定title是必需的,且最大255(字串)
+                'body' => 'required'
+            ));
+
+        // store in the database
+        $post = new Post;
+
+        $post->title = $request->title;
+        $post->body = $request->body;
+
+        $post->save();
+
+        // redirect to another page
+        return redirect()->route('posts.show', $post->id);
     }
 
     /**
