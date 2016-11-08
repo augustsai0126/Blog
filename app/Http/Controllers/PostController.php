@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\Post;
 
+use Session;
+
 class PostController extends Controller
 {
     /**
@@ -52,6 +54,8 @@ class PostController extends Controller
 
         $post->save();
 
+        Session::flash('success', '張貼成功');
+
         // redirect to another page
         return redirect()->route('posts.show', $post->id);
     }
@@ -64,7 +68,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('posts.show');
     }
 
     /**
