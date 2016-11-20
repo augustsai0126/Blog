@@ -19,6 +19,7 @@ class PostController extends Controller
      */
     public function index()
     {
+        // 新增一個變數並將所有存在資料庫的資料存進去
         $posts = Post::all();
         return view('posts.index')->withPosts($posts);
     }
